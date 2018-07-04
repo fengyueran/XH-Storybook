@@ -24,12 +24,24 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-config-curacloud": "^1.0.17",
-    "eslint-plugin-jsx-a11y": "^2.2.3"
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-info": "^3.4.7",
+    "@storybook/addon-knobs": "^3.4.7",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addon-notes": "^3.4.7",
+    "@storybook/addon-options": "^3.4.7",
+    "@storybook/addons": "^3.4.8",
+    "@storybook/react": "^3.4.8",
+    "react-storybook-addon-chapters": "^2.1.5",
+    "storybook-readme": "^3.3.0"
   },
   "scripts": {
     "start": "PORT=1989 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   }
 }
