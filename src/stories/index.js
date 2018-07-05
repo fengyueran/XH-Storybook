@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withInfo } from '@storybook/addon-info';
 
 import { Button, Welcome } from '@storybook/react/demo';
 import TestButton from '../components/TestButton';
@@ -18,6 +19,20 @@ storiesOf('Button', module)
       </span>
     </Button>
   ));
+
+storiesOf('Component', module)
+.add('simple info',
+  withInfo(`
+    description or documentation about my component, supports markdown
+  
+    ~~~js
+    <Button>Click Here</Button>
+    ~~~
+  
+  `)(() =>
+    <TestButton onClick={action('clicked')}>Test Button</TestButton>
+  )
+);
 
 storiesOf('Addon Chapters')
   .addWithChapters(
