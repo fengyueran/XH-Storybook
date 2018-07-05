@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 
 class TestButton extends Component {
   render() {
-    const { background, onClick } = this.props;
+    const { background, opacity, onClick } = this.props;
     return (
-      <button onClick={onClick} style={{ width: 100, height: 30, background }} />
+      <button onClick={onClick} style={{ width: 100, height: 30, background, opacity }} />
     );
   }
 }
 
 TestButton.propTypes = {
   onClick: PropTypes.func,
+  opacity: PropTypes.number,
   background: PropTypes.string,
 };
 

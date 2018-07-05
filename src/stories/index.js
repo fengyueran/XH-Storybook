@@ -7,6 +7,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withNotes, withMarkdownNotes } from '@storybook/addon-notes';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { withSmartKnobs } from 'storybook-addon-smart-knobs';
+import withPropsCombinations from 'react-storybook-addon-props-combinations';
 import { Button, Welcome } from '@storybook/react/demo';
 import TestButton from '../components/TestButton';
 
@@ -96,3 +97,16 @@ storiesOf('withNotes', module)
     </div>
     ~~~
   `)(() => <TestButton />));
+
+storiesOf('withPropsCombinations', module)
+  .add('Standard usage', withPropsCombinations(
+    // provide your component
+    TestButton,
+    // and an object with the shape
+    // {propName: arrayOfPossiblevalues}
+    {
+      opacity: [0.5, 0.2, 1],
+      background: ['red', 'blue'],
+      onClick: [action('clicked')],
+    }
+  ));
