@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
+import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
+import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 import { Button, Welcome } from '@storybook/react/demo';
 import TestButton from '../components/TestButton';
 
@@ -67,13 +68,17 @@ storiesOf('Addon Chapters')
   }
   );
 
-const stories = storiesOf('Avatar', module);
+const stories = storiesOf('Knob', module);
 
-stories.add('coreylight@gmail.com', () => <TestButton />);
-stories.add('as dynamic variables', () => {
+stories
+.add('Dynamic variables without smart knob', () => {
   const name = text('Name', 'xhm');
   const age = number('Age', 17);
 
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
 });
+
+stories
+.addDecorator(withSmartKnobs)
+.add('Dynamic variables with smart knob', () => (<TestButton background={'blue'} />));
