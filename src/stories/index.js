@@ -4,9 +4,10 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withInfo } from '@storybook/addon-info';
-
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { Button, Welcome } from '@storybook/react/demo';
 import TestButton from '../components/TestButton';
+
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -65,3 +66,14 @@ storiesOf('Addon Chapters')
     ],
   }
   );
+
+const stories = storiesOf('Avatar', module);
+
+stories.add('coreylight@gmail.com', () => <TestButton />);
+stories.add('as dynamic variables', () => {
+  const name = text('Name', 'xhm');
+  const age = number('Age', 17);
+
+  const content = `I am ${name} and I'm ${age} years old.`;
+  return (<div>{content}</div>);
+});
