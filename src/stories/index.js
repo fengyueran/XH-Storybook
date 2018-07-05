@@ -4,11 +4,11 @@ import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withInfo } from '@storybook/addon-info';
+import { withNotes, withMarkdownNotes } from '@storybook/addon-notes';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 import { Button, Welcome } from '@storybook/react/demo';
 import TestButton from '../components/TestButton';
-
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -22,7 +22,7 @@ storiesOf('Button', module)
     </Button>
   ));
 
-storiesOf('Component', module)
+storiesOf('withInfo', module)
 .add('simple info',
   withInfo(`
     description or documentation about my component, supports markdown
@@ -82,3 +82,17 @@ stories
 stories
 .addDecorator(withSmartKnobs)
 .add('Dynamic variables with smart knob', () => (<TestButton background={'blue'} />));
+
+storiesOf('withNotes', module)
+  .add('With Markdown', withNotes(`
+    # Hello World
+
+    This is some code showing usage of the component and other inline documentation
+
+    ~~~js
+    <div>
+      hello world!
+      <TestButton />
+    </div>
+    ~~~
+  `)(() => <TestButton />));
