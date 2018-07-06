@@ -23,8 +23,8 @@ storiesOf('Button', module)
     </Button>
   ));
 
-storiesOf('withInfo', module)
-.add('simple info',
+storiesOf('Addons', module)
+.add('withInfo',
   withInfo(`
     description or documentation about my component, supports markdown
   
@@ -35,10 +35,8 @@ storiesOf('withInfo', module)
   `)(() =>
     <TestButton onClick={action('clicked')}>Test Button</TestButton>
   )
-);
-
-storiesOf('Addon Chapters')
-  .addWithChapters(
+)
+.addWithChapters(
     'Story With Chapters',
   {
     subtitle: 'subtitle',
@@ -67,25 +65,17 @@ storiesOf('Addon Chapters')
       },
     ],
   }
-  );
-
-const stories = storiesOf('Knob', module);
-
-stories
+  )
 .add('Dynamic variables without smart knob', () => {
   const name = text('Name', 'xhm');
   const age = number('Age', 17);
 
   const content = `I am ${name} and I'm ${age} years old.`;
   return (<div>{content}</div>);
-});
-
-stories
+})
 .addDecorator(withSmartKnobs)
-.add('Dynamic variables with smart knob', () => (<TestButton background={'blue'} />));
-
-storiesOf('withNotes', module)
-  .add('With Markdown', withNotes(`
+.add('Dynamic variables with smart knob', () => (<TestButton background={'blue'} />))
+.add('withNotes', withNotes(`
     # Hello World
 
     This is some code showing usage of the component and other inline documentation
@@ -96,10 +86,8 @@ storiesOf('withNotes', module)
       <TestButton />
     </div>
     ~~~
-  `)(() => <TestButton />));
-
-storiesOf('withPropsCombinations', module)
-  .add('Standard usage', withPropsCombinations(
+  `)(() => <TestButton />))
+  .add('withPropsCombinations', withPropsCombinations(
     // provide your component
     TestButton,
     // and an object with the shape
