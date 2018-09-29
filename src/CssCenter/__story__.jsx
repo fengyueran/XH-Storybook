@@ -11,6 +11,7 @@ import withPropsCombinations from 'react-storybook-addon-props-combinations';
 import CssCenter1 from '../CssCenter/example1';
 import CssCenter2 from '../CssCenter/example2';
 import CssCenter3 from '../CssCenter/example3';
+import CssCenter4 from '../CssCenter/example4';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -65,6 +66,25 @@ storiesOf('前端', module)
                 块级元素B水平居中，行内元素若要通过margin居中可以设置其display属性为block。
                 `,
             sectionFn: () => (<CssCenter3 />),
+            options: {
+              showSource: false,
+              allowSourceToggling: true,
+              showPropTables: false,
+              allowPropTablesToggling: false,
+            },
+          },
+          {
+            subtitle: '4）position',
+            info: `
+                A:width: 500px;
+                position: relative;\n
+                B:
+                position: absolute;
+                left: 180px;
+                width: 140px;\n
+                子元素B相对于父元素A的left为父元素宽度减去子元素宽度的一半。
+                `,
+            sectionFn: () => (<CssCenter4 />),
             options: {
               showSource: false,
               allowSourceToggling: true,
