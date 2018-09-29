@@ -10,6 +10,7 @@ import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 import withPropsCombinations from 'react-storybook-addon-props-combinations';
 import CssCenter1 from '../CssCenter/example1';
 import CssCenter2 from '../CssCenter/example2';
+import CssCenter3 from '../CssCenter/example3';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -54,7 +55,22 @@ storiesOf('前端', module)
               showPropTables: false,
               allowPropTablesToggling: false,
             },
-            
+          },
+          {
+            subtitle: '3）margin-auto',
+            info: `
+                B:
+                width: 200px;
+                margin: 0 auto;
+                块级元素B水平居中，行内元素若要通过margin居中可以设置其display属性为block。
+                `,
+            sectionFn: () => (<CssCenter3 />),
+            options: {
+              showSource: false,
+              allowSourceToggling: true,
+              showPropTables: false,
+              allowPropTablesToggling: false,
+            },
           },
         ],
       },
