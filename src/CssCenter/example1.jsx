@@ -40,7 +40,7 @@ const Grandson = styled.span`
 `;
 
 
-class CssCenter1 extends Component {
+class CssHCenter1 extends Component {
   render() {
     return (
       <RootDiv>
@@ -54,4 +54,4 @@ class CssCenter1 extends Component {
   }
 }
 
-export default CssCenter1;
+export default CssHCenter1;

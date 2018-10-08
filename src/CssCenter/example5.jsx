@@ -26,7 +26,7 @@ const Son = styled.div`
 `;
 
 
-class CssCenter5 extends Component {
+class CssHCenter5 extends Component {
   render() {
     return (
       <RootDiv>
@@ -38,4 +38,4 @@ class CssCenter5 extends Component {
   }
 }
 
-export default CssCenter5;
+export default CssHCenter5;
