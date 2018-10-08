@@ -13,6 +13,7 @@ import CssCenter2 from '../CssCenter/example2';
 import CssCenter3 from '../CssCenter/example3';
 import CssCenter4 from '../CssCenter/example4';
 import CssCenter5 from '../CssCenter/example5';
+import CssCenter6 from '../CssCenter/example6';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -69,7 +70,22 @@ storiesOf('前端', module)
             sectionFn: () => (<CssCenter4 />),
           },
           {
-            subtitle: '5）transform',
+            subtitle: '5）position + margin-left',
+            info: `
+                A:
+                position: relative;\n
+                B:
+                position: absolute;
+                left: 50%;
+                margin-left: -70px;
+                width: 140px;\n
+                不需要知道父子元素的宽度，通过margin-left设置为自身的一半宽度的负值达到向左偏移自身的一半宽度， 与4)中的实现方法本质是一样的。\n
+                需要知道子元素B的宽度。
+                `,
+            sectionFn: () => (<CssCenter5 />),
+          },
+          {
+            subtitle: '6）position + transform',
             info: `
                 A:
                 position: relative;\n
@@ -80,7 +96,7 @@ storiesOf('前端', module)
                 不需要知道父子元素的宽度，先定位到父元素的水平中心位置再通过transform向左偏移自身的一半宽度， 与4)中的实现方法本质是一样的。\n
                 transform只对块级元素有效。
                 `,
-            sectionFn: () => (<CssCenter5 />),
+            sectionFn: () => (<CssCenter6 />),
           },
         ],
       },
