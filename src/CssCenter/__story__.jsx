@@ -22,6 +22,7 @@ import CssVCenter4 from '../CssCenter/example11';
 import CssVCenter5 from '../CssCenter/example12';
 import CssVCenter6 from '../CssCenter/example13';
 import CssVCenter7 from '../CssCenter/example14';
+import CssVCenter8 from '../CssCenter/example15';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -231,6 +232,24 @@ storiesOf('前端', module)
                   B为单行文本，通过设置其line-height为父元素高度，使其垂直居中。
                 `,
             sectionFn: () => (<CssVCenter7 />),
+          },
+          {
+            subtitle: '8）inline-block',
+            info: `
+                  A(div): 
+                  &:after {
+                    content: "";
+                    height: 100%;
+                    vertical-align: middle;
+                    display: inline-block;
+                  } \n
+                  B(p) :
+                  vertical-align: middle;
+                  display: inline-block;\n
+                  父元素A添加伪元素，伪元素与父元素同高且为行内块级元素(display: inline-block)、居中对齐，
+                  子元素B设置为行内块级元素， 居中对齐。
+                `,
+            sectionFn: () => (<CssVCenter8 />),
           },
         ],
       },
