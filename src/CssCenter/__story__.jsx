@@ -16,6 +16,8 @@ import CssHCenter5 from '../CssCenter/example5';
 import CssHCenter6 from '../CssCenter/example6';
 import CssHCenter7 from '../CssCenter/example7';
 import CssVCenter1 from '../CssCenter/example8';
+import CssVCenter2 from '../CssCenter/example9';
+
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -140,7 +142,22 @@ storiesOf('前端', module)
                 `,
             sectionFn: () => (<CssVCenter1 />),
           },
-          
+          {
+            subtitle: '2）position + margin-auto',
+            info: `
+                  A:
+                  position: relative;
+                  子元素B垂直居中 \n
+                  B: position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  height: 50px;
+                  margin: auto 0;\n
+                  子元素B高度固定，B垂直居中 
+
+                `,
+            sectionFn: () => (<CssVCenter2 />),
+          },
         ],
       },
     ],
