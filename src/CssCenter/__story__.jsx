@@ -14,6 +14,8 @@ import CssHCenter3 from '../CssCenter/example3';
 import CssHCenter4 from '../CssCenter/example4';
 import CssHCenter5 from '../CssCenter/example5';
 import CssHCenter6 from '../CssCenter/example6';
+import CssHCenter7 from '../CssCenter/example7';
+import CssVCenter1 from '../CssCenter/example8';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -98,6 +100,47 @@ storiesOf('前端', module)
                 `,
             sectionFn: () => (<CssHCenter6 />),
           },
+          {
+            subtitle: '7）fit-content',
+            info: `
+            结构："<A>
+                  <B>
+                   <li>Meat</li>
+                   ...
+                  </B>
+                 </A>"\n
+                A(div):
+                position: relative;
+                width: 500px;\n
+                B(ul):
+                width: fit-content;
+                margin: 0 auto;\n
+                li: float: left;
+                子元素B水平居中
+                `,
+            sectionFn: () => (<CssHCenter7 />),
+          },
+        ],
+      },
+      {
+        title: '垂直居中方法',
+        sections: [
+          // List of sections.
+          {
+            subtitle: '1）flex垂直居中',
+            info: `
+                  A:
+                  display: flex;
+                  align-items: center;
+                  子元素B垂直居中 \n
+                  B:  display: flex;
+                  align-items: center;
+                  子元素C垂直居中 \n
+
+                `,
+            sectionFn: () => (<CssVCenter1 />),
+          },
+          
         ],
       },
     ],

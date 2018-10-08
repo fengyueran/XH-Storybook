@@ -4,11 +4,9 @@ import styled from 'styled-components';
 
 
 const RootDiv = styled.div`
-  display: flex;
   position: relative;
-  justify-content: center;
   width: 500px;
-  height:150px;
+  height:50px;
   border: 1px solid;
   background: #FFF0F0;
   &:before {
@@ -19,39 +17,37 @@ const RootDiv = styled.div`
   }
 `;
 
-const SonDiv = styled.div`
-  width: 320px;
-  height: 100px;
-  position: relative;
-  background: #0CB6F0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Son = styled.ul`
+  background: red;
+  height: 40px;
+  width: fit-content;
+  margin: 0 auto;
+  padding-left: 0;
   &:before {
     position: absolute;
-    left: 0;
+    left: 100;
     top: 0;
     content: "B";
   }
 `;
 
-const Grandson = styled.span`
-  background: red;
+const Li = styled.li`
+  float: left;
+  margin : 15px 15px;
 `;
 
-
-class CssHCenter1 extends Component {
+class CssHCenter7 extends Component {
   render() {
     return (
       <RootDiv>
-        <SonDiv>
-          <Grandson>
-            C This is span tag
-          </Grandson>
-        </SonDiv>
+        <Son>
+          <Li><a href="/">Meat</a></Li>
+          <Li><a href="/">Fruits</a></Li>
+          <Li><a href="/">Vegetables</a></Li>
+        </Son>
       </RootDiv>
     );
   }
 }
 
-export default CssHCenter1;
+export default CssHCenter7;
