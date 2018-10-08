@@ -21,6 +21,7 @@ import CssVCenter3 from '../CssCenter/example10';
 import CssVCenter4 from '../CssCenter/example11';
 import CssVCenter5 from '../CssCenter/example12';
 import CssVCenter6 from '../CssCenter/example13';
+import CssVCenter7 from '../CssCenter/example14';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -219,6 +220,17 @@ storiesOf('前端', module)
                   其他元素若要使用vertical-align，需将父元素设置为isplay:table, 子元素设置为display:table-cell;vertical-align:middle;
                 `,
             sectionFn: () => (<CssVCenter6 />),
+          },
+          {
+            subtitle: '7）line-height',
+            info: `
+                  A(div): 
+                  height: 100px; \n
+                  B(span) :
+                  line-height: 100px;
+                  B为单行文本，通过设置其line-height为父元素高度，使其垂直居中。
+                `,
+            sectionFn: () => (<CssVCenter7 />),
           },
         ],
       },
