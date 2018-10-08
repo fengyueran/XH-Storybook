@@ -17,7 +17,7 @@ import CssHCenter6 from '../CssCenter/example6';
 import CssHCenter7 from '../CssCenter/example7';
 import CssVCenter1 from '../CssCenter/example8';
 import CssVCenter2 from '../CssCenter/example9';
-
+import CssVCenter3 from '../CssCenter/example10';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -157,6 +157,20 @@ storiesOf('前端', module)
 
                 `,
             sectionFn: () => (<CssVCenter2 />),
+          },
+          {
+            subtitle: '3）position',
+            info: `
+                  A:
+                  position: relative;
+                  height:150px;
+                  子元素B垂直居中 \n
+                  B: position: absolute;
+                  top: 50;
+                  height: 50px;\n
+                  子元素B相对于父元素A的高top为父元素高度减去子元素高度的一半，因此必须知道父子元素的高度 
+                `,
+            sectionFn: () => (<CssVCenter3 />),
           },
         ],
       },
