@@ -20,6 +20,7 @@ import CssVCenter2 from '../CssCenter/example9';
 import CssVCenter3 from '../CssCenter/example10';
 import CssVCenter4 from '../CssCenter/example11';
 import CssVCenter5 from '../CssCenter/example12';
+import CssVCenter6 from '../CssCenter/example13';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -198,6 +199,26 @@ storiesOf('前端', module)
                   不需要知道父子元素的高度。
                 `,
             sectionFn: () => (<CssVCenter5 />),
+          },
+          {
+            subtitle: '6）vertical-align',
+            info: `
+                子元素B垂直居中。
+                结构: <table>
+                        <td>
+                          <th>
+                            <B />
+                          </th>
+                        </td>
+                     </table>
+                     \n
+                  A(th): 
+                  height: 70px;
+                  vertical-align: middle; \n
+                  只有当元素的父元素为td/th，且高度固定时，设置vertical-align: middle有效。
+                  其他元素若要使用vertical-align，需将父元素设置为isplay:table, 子元素设置为display:table-cell;vertical-align:middle;
+                `,
+            sectionFn: () => (<CssVCenter6 />),
           },
         ],
       },
