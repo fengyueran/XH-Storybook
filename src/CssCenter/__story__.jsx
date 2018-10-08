@@ -18,6 +18,8 @@ import CssHCenter7 from '../CssCenter/example7';
 import CssVCenter1 from '../CssCenter/example8';
 import CssVCenter2 from '../CssCenter/example9';
 import CssVCenter3 from '../CssCenter/example10';
+import CssVCenter4 from '../CssCenter/example11';
+import CssVCenter5 from '../CssCenter/example12';
 
 storiesOf('前端', module)
 .addWithChapters(
@@ -146,8 +148,7 @@ storiesOf('前端', module)
             subtitle: '2）position + margin-auto',
             info: `
                   A:
-                  position: relative;
-                  子元素B垂直居中 \n
+                  position: relative; \n
                   B: position: absolute;
                   top: 0;
                   bottom: 0;
@@ -163,14 +164,40 @@ storiesOf('前端', module)
             info: `
                   A:
                   position: relative;
-                  height:150px;
-                  子元素B垂直居中 \n
+                  height:150px; \n
                   B: position: absolute;
                   top: 50;
                   height: 50px;\n
                   子元素B相对于父元素A的高top为父元素高度减去子元素高度的一半，因此必须知道父子元素的高度 
                 `,
             sectionFn: () => (<CssVCenter3 />),
+          },
+          {
+            subtitle: '4）position + margin-top',
+            info: `
+                  A:
+                  position: relative;
+                  height:150px; \n
+                  B: position: absolute;
+                  top: 50%;
+                  margin-top: -25px;
+                  height: 50px;\n
+                  子元素B相对于父元素A的top为父元素高度的一半，margin-top为子元素高度一半的负值，因此必须知道子元素的高度。 
+                `,
+            sectionFn: () => (<CssVCenter4 />),
+          },
+          {
+            subtitle: '5）position + transform',
+            info: `
+                  A:
+                  position: relative; \n
+                  B: position: absolute;
+                  top: 50%;
+                  transform: translateY(-50%);\n
+                  子元素B相对于父元素A的top为父元素高度的一半，通过translateY(-50%)使子元素向上偏移自己一半的高度，本质上与3）、4）中的方法一样。 
+                  不需要知道父子元素的高度。
+                `,
+            sectionFn: () => (<CssVCenter5 />),
           },
         ],
       },
